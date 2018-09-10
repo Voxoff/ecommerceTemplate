@@ -2,9 +2,10 @@
 
 This app has
 *Devise
-*Stripe - NEED VALID APIKEYS
+*Stripe - *NEED VALID APIKEYS*
 *ActiveAdmin
-*Cloudinary
+*Cloudinary - *NEED VALID APIKEYS*
 *CarrierWave
 *MoneyRails
 *Validations
+*Facebook Login - *NEED VALID APIKEYS*
