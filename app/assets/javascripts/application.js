@@ -1,2 +1,3 @@
 //= require rails-ujs
-//= require_tree .
+//= require ./cable
+// We cannot use tree . since this would require activeadmin everywhere.
