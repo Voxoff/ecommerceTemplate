@@ -15,10 +15,15 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+# Our template
 gem 'money-rails'
+gem 'stripe'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'cloudinary'
+gem 'carrierwave'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

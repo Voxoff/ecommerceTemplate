@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -18,5 +16,11 @@
           </div>
   </div>
 </div>
+
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'product_id', @product.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
 
 <%= link_to 'Back', products_path %>
