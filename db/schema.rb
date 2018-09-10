@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_120611) do
     t.string "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "reviews", force: :cascade do |t|

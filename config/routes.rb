@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'pages/about'
   root to: 'pages#home'
-  resources :products
+  resources :products, only: [:show, :index]
+  resources :orders
+  resources :reviews
+
 end
