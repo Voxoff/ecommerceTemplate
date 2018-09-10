@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_120611) do
     t.string "name"
     t.string "description"
     t.boolean "availability"
-    t.string "photo_url"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
