@@ -7,7 +7,6 @@
     </label>
   </article>
 
-  <!-- # Commented for the lecture, remove comments.
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="My product"
@@ -15,4 +14,4 @@
     data-description="product <%= @order.product_sku %>"
     data-amount="<%= @order.amount_cents %>"
     data-currency="<%= @order.amount.currency %>"></script>
-  -->
+<% end %>

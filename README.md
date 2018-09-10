@@ -2,7 +2,7 @@ An ecommerce template
 
 This app has
 Devise
-Stripe
+Stripe - NEED VALID APIKEYS
 ActiveAdmin
 Validations on models
 MoneyRails

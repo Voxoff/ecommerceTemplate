@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @order.amount_cents,
-      description:  "Payment for product #{@order.teddy_sku} for order #{@order.id}",
+      description:  "Payment for teddy #{@order.teddy_sku} for order #{@order.id}",
       currency:     @order.amount.currency
     )
 
@@ -25,9 +25,11 @@ class PaymentsController < ApplicationController
     redirect_to new_order_payment_path(@order)
   end
 
+
   private
 
   def set_order
     @order = current_user.orders.where(state: 'PENDING').find(params[:order_id])
   end
+
 end
