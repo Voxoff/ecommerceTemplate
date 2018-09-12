@@ -1,3 +1,69 @@
+<style type="text/css">
+  .banner-with-nav {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+  }
+  // #############################################################################
+  // Login banner
+  // #############################################################################
+  .login-banner {
+  /*  background-image: linear-gradient(-225deg, rgba(255,255,255,0.6) 0%, rgba(0,0,0,0.6) 40%), url("<%#= image_path 'login-background.jpg' %>");*/
+   width: auto;
+   height: auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   // background-position: center;
+   // background-size: cover;
+   background-color: white;
+   border-right: 2px solid rgba(83, 140, 212, 0.8);
+   margin: 8px 0;
+  }
+  .info-cont {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 450px;
+   margin: 15px auto 15px auto;
+   color: $blue;
+   p {
+    color: $light-gray;
+   }
+   h4 {
+    width: 500px
+   }
+  }
+  .login-logo {
+   width: 50px;
+   height: 50px;
+  }
+  .info-row {
+   width: 350px;
+  } h4 {
+   margin-top: 15px;
+  }
+  .terms {
+   margin-top: 40px;
+   margin-bottom: 40px;
+   text-align: center;
+  }
+  .centered {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+  }
+  .align-self-center{
+    align-self: center !important;
+  }
+  .banner-kitchen-nametag {
+    position: absolute;
+    top: 58vh;
+    right: 30px;
+    font-size: 24px;
+    color: white !important;
+  }
+</style>
+<% if false %>
 <div class="container">
   <div class="col-md-offset-3 col-md-6">
 
@@ -26,5 +92,79 @@
     <% end %>
 
     <%= render "devise/shared/links" %>
+  </div>
+</div>
+<% end %>
+
+
+
+<div>
+  <div class="row banner-with-nav">
+    <div class="login-banner d-none d-md-block col-md-6 col-lg-7">
+      <div style="height:100%;" class="row">
+        <div class="col align-self-center">
+          <div class="cust-row text-center">
+            <h3>Join the place for kitchen space</h3>
+          </div>
+
+          <div class="row info-cont mt-4">
+            <div class="center-image">
+              <%= image_tag("logo.png", :alt => "rss feed", :class => "login-logo") %>
+            </div>
+            <div class="info-row">
+              <h4>Find your perfect kitchen</h4>
+              <p>Search and discover commercial kitchens available to hire daily, weekly or monthly</p>
+            </div>
+          </div>
+
+          <div class="row info-cont">
+            <%= image_tag("logo.png", :alt => "rss feed", :class => "login-logo") %>
+            <div class="info-row">
+              <h4>The simple way</h4>
+              <p>Get the information you need, arrange viewings and book space directly on the platform</p>
+            </div>
+          </div>
+
+          <div class="row info-cont">
+            <%= image_tag("logo.png", :alt => "rss feed", :class => "login-logo") %>
+            <div class="info-row">
+              <h4>A supportive community</h4>
+              <p>Join a movement towards a more flexible and sustainable use of commercial kitchen space</p>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="centered white-bg col ml-4 pl-4" >
+      <div>
+        <div class="text-center mt-3">
+          <h5 class="mb-0">Already a member? <%= link_to "Log in", new_user_session_path %> </h5>
+        </div>
+        <div class="login-form">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true ,
+                          input_html: { autocomplete: "email" }%>
+              <%= f.input :password,
+                          required: true,
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" } %>
+              <%= f.input :password_confirmation,
+                          required: true,
+                          input_html: { autocomplete: "new-password" } %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Sign up", class: "btn btn-block btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
