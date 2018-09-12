@@ -1,0 +1,19 @@
+.footer {
+	height: 20vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1.5rem;
+	background: $primary-color-light;
+
+	&_company-details {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&_legal {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end; 
+	}
+}
