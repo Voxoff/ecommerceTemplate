@@ -1,28 +1,24 @@
-<div class="navbar-">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar--brand" do %>
+<div class="navbar-hd">
+  <%= link_to root_path, class: "navbar-hdn-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
-  <!-- Right Navigation -->
-  <div class="navbar--right hidden-xs hidden-sm">
+  <div class="navbar-hd-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-      <!-- Links when logged in -->
-      <%= link_to "Products", "#", class: "navbar--item navbar--link" %>
-      <%= link_to orders_path, class: "navbar--item navbar--link" do %> 
+      <%= link_to "P", "#", class: "navbar-hd-item navbar-hd-link" %>
+      <%= link_to orders_path, class: "navbar-hd-item navbar-hd-link" do %> 
         <i class="fas fa-shopping-cart"></i>
       <% end %>
 
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar--item">
+      <div class="navbar-hd-item">
         <div class="dropdown">
           <% avatar_url = current_user.facebook_picture_url || "
 
 https://picsum.photos/30/30/?random" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar--menu", "data-toggle" => "dropdown" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-hd-menu", "data-toggle" => "dropdown" %>
 
-          <ul class="dropdown-menu dropdown-menu-right navbar--dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu-right navbar-hd-dropdown-menu">
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
@@ -43,15 +39,15 @@ https://picsum.photos/30/30/?random" %>
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar--item navbar--link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-hd-item navbar-hd-link" %>
     <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar--item hidden-md hidden-lg">
+  <div class="navbar-hd-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar--dropdown-menu">
+      <ul class="dropdown-menu dropdown-menu-right navbar-hd-dropdown-menu">
         <li><a href="#">Some mobile link</a></li>
         <li><a href="#">Other one</a></li>
         <li><a href="#">Other one</a></li>
