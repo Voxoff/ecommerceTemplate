@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.home-page {
+
+	&_first-section {
+
+		// PLEASE DELETE
+		height: 50vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid black;
+	}
+
+	&_second-section {
+		// PLEASE DELETE
+		height: 50vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid black;
+	}
+
+	&_third-section {
+		// PLEASE DELETE
+		height: 50vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid black;
+	}
+}
