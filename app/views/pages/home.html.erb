@@ -6,60 +6,58 @@
       </a>
   </div>
 </div>
-<!-- How it works -->
-<% if false %>
-<h3 class="mb-2 mt-4 bold" style="text-align: center;">How it works: Some graphics</h3>
-<div class="how-it-works-banner">
-  <div class="how-it-works-card">
-    <%= image_tag "loupe.svg" %>
-    <div class="how-it-works-text">
-      <h3>Find ait</h3>
-      <p>Quick and simple search</p>
-    </div>
-  </div>
-  <div class="how-it-works-card">
-    <%= image_tag "002-medical.svg" %>
-    <div class="how-it-works-text">
-      <h3>View it</h3>
-      <p></p>
-    </div>
-  </div>
-  <div class="how-it-works-card">
-    <%= image_tag "001-chef.svg" %>
-    <div class="how-it-works-text">
-      <h3>Cook it</h3>
-      <p>Wahoo</p>
-    </div>
-  </div>
-</div>
-<% end %>
 
 <div class="flex">
   <div class="card">
     <%= image_tag "loupe.svg" %>
     <div class="how-it-works-text">
-      <h3>Find ait</h3>
+      <h3>Find it</h3>
       <p>Quick and simple search</p>
     </div>
   </div>
   <div class="card">
     <%= image_tag "001-chef.svg" %>
     <div class="how-it-works-text">
-      <h3>Find ait</h3>
+      <h3>Find it</h3>
       <p>Quick and simple search</p>
     </div>
   </div>
   <div class="card">
     <%= image_tag "002-medical.svg" %>
     <div class="how-it-works-text">
-      <h3>Find ait</h3>
+      <h3>Find it</h3>
       <p>Quick and simple search</p>
     </div>
   </div>
 </div>
 <!-- Products -->
-<% @products.each do |product| %>
-  <div class="card">
-    <h1><%= product.name %></h1>
+<div class="container">
+<% @products.in_groups_of(3) do |products| %>
+
+  <div class="row">
+    <div class="product-card">
+      <h1><%= product.name %></h1>
+      <%= cl_image_tag product.photo %>
+    </div>
   </div>
 <% end %>
+</div>
+
+
+<div class="home-page">
+<ol>
+  <section class="home-page_first-section">
+  <li>Stripe</li>
+    <h3>FIRST SECTION</h3>
+  <li>Devise</li>
+  </section>
+  <li>MoneyRails</li>
+  <section class="home-page_second-section">
+  <li>Admin backend</li>
+    <h3>SECOND SECTION</h3>
+</ol>
+  </section>
+  <section class="home-page_third-section">
+    <h3>THIRD SECTION</h3>
+  </section>
+</div> 
