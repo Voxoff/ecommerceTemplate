@@ -74,6 +74,11 @@ ActiveRecord::Schema.define(version: 2018_09_10_145724) do
     t.boolean "admin", default: false, null: false
     t.string "provider"
     t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
