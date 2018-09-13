@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  def index
+    @orders = current_user.orders
+  end
+
   def create
     product = Product.find(params[:product_id])
     order  = Order.create!(product_sku: product.sku, amount: product.price, state: 'PENDING', user: current_user)
