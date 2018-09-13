@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   get 'pages/about'
   root to: 'pages#home'
   resources :products, only: [:show, :index]
-  resources :orders, only: [:show, :create] do
+  resources :orders, only: [:show, :create, :index] do
     resources :payments, only: [:new, :create]
   end
   resources :reviews
-
 end

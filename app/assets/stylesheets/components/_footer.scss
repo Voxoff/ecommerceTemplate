@@ -1,5 +1,4 @@
 .footer {
-
 	height: 20vh;
 	display: flex;
 	align-items: center;
@@ -7,41 +6,35 @@
 	padding: 0 1.5rem;
 	background: $primary-color-light;
 
-	&_company-details {
+	&-company-details {
 		display: flex;
 		flex-direction: column;
 	}
 
-	&_legal {
+	&-legal {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end; 
+    text-decoration: none;
+    color: $secondary-color-light
 	}
-}
 
-//   margin-top: 200px;
-//   background: #F4F4F4;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   height: 100px;
-//   padding: 0px 50px;
-//   color: rgba(0,0,0,0.3);
-// }
-// .footer-links {
-//   display: flex;
-//   align-items: center;
-// }
-// .footer-links a {
-//   color: black;
-//   opacity: 0.15;
-//   text-decoration: none;
-//   font-size: 24px;
-//   padding: 0px 10px;
-// }
-// .footer-links a:hover {
-//   opacity: 1;
-// }
-// .footer .fa-heart {
-//   color: #D23333;
-// }
+  &-legal a:hover{
+    text-decoration: none;
+    color: $secondary-color-light
+  }
+  &-links {
+    display: flex;
+    align-items: center;
+  }
+  &-links a {
+    color: black;
+    opacity: 0.15;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0px 10px;
+  }
+  &-links a:hover {
+    opacity: 1;
+  }
+}
