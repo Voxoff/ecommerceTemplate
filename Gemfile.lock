@@ -86,6 +86,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-select-rails (1.12.4)
     builder (3.2.3)
     byebug (10.0.2)
     carrierwave (1.2.3)
@@ -120,6 +121,8 @@ GEM
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     has_scope (0.7.2)
@@ -321,13 +324,16 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)
+  bootstrap-select-rails
   carrierwave (~> 1.2)
   cloudinary
   devise
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
+  friendly_id
   inherited_resources!
   jbuilder (~> 2.0)
+  jquery-rails
   listen (~> 3.0.5)
   money-rails
   omniauth-facebook

@@ -1,28 +1,50 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back', products_path %>  
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1><%= @product.name %></h1>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-sm-12 col-md-6">
-      <%= image_tag(@product.photo_url, width: '100%') %>
       <%= cl_image_tag(@product.photo_url,
-      width: 400, height: 300, crop: :fill) %>
+      width: 500, height: 500, crop: :fill) %>
     </div>
     <div class="col-sm-12 col-md-6">
+      <h1><%= @product.name %></h1>
       <p>Some awesome description of our amazing product.</p>
-      <p>Amount: <%= humanized_money_with_symbol(@product.price) %></p>
-          </div>
+      <p>Amount: £<span id="price"><%= humanized_money(@product.price) %></span></p>
+      <% if false %>
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'product_id', @product.id %>
+        <%= collection_select :product, :id, [@product], :tring, 1..10 %>
+        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+      <% end %>
+      <label for="quantity">Quantity: </label> 
+      <select id="quantity" name="quantity">
+        <% for i in (1..10) %>
+          <option value="<%= i %>"> <%= i %></option>
+        <% end %>
+      </select>
+
+      <% else %>
+        <%= simple_form_for orders_path, {wrapper: :vertical_collection } do |f| %>
+          <%= f.input "Quantity", required: false, collection: 1..9, as: :select, input_html: {id: "dropdown", class: "selectpicker"}, selected: 1 %>
+          <%= f.submit "Purchase", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'product_id', @product.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<%= content_for :after_js do %>
+  <%= javascript_tag "$('.selectpicker').selectpicker();" %>
 <% end %>
 
-<%= link_to 'Back', products_path %>
+<script type="text/javascript">
+  //This is not th emost efficient method
+  document.addEventListener("click", (e)=> {
+    if (e.target.tagName == "A"){
+      let q = e.target.children[0].innerHTML
+      q = parseInt(q)
+      let amount = document.getElementById('price').innerHTML
+      document.getElementById('price').innerHTML = q * <%= humanized_money(@product.price) %>
+    }
+  })
+</script>
