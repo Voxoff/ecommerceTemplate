@@ -12,7 +12,7 @@
       <p>Some awesome description of our amazing product.</p>
       <p>Amount: £<span id="price"><%= humanized_money(@product.price) %></span></p>
       <%= simple_form_for(@order, {wrapper: :vertical_collection}) do |f| %>
-        <%= f.input "Quantity", required: false, collection: 1..9, as: :select, input_html: {id: "dropdown", class: "selectpicker"}, selected: 1 %>
+        <%= f.input "Quantity", required: false, collection: 1..9, as: :select, input_html: {id: "dropdown"}, selected: 1 %>
         <!-- Seems cleaner to pass this outside of order hash? -->
         <%= f.hidden_field :product_id, value: @product.id %>
         <%= f.submit "Purchase", class: "btn btn-primary" %>
@@ -25,13 +25,5 @@
 <% end %>
 
 <script type="text/javascript">
-  //This is not th emost efficient method
-  // document.addEventListener("click", (e)=> {
-  //   if (e.target.tagName == "A"){
-  //     let q = e.target.children[0].innerHTML
-  //     q = parseInt(q)
-  //     let amount = document.getElementById('price').innerHTML
-  //     document.getElementById('price').innerHTML = q * <%= humanized_money(@product.price) %>
-  //   }
-  // })
+
 </script>
