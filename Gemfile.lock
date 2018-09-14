@@ -71,6 +71,10 @@ GEM
       tzinfo (~> 1.1)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
+    arctic_admin (1.5.2)
+      activeadmin (>= 1.1.0, < 2.0)
+      font-awesome-rails
+      jquery-rails
     arel (9.0.0)
     autoprefixer-rails (9.1.4)
       execjs
@@ -116,6 +120,8 @@ GEM
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
     formtastic (3.1.5)
@@ -321,6 +327,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  arctic_admin
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)

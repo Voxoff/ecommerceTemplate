@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @order = Order.new
     @product = Product.friendly.find(params[:id])
   end
 end

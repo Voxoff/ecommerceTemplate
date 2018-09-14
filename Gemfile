@@ -29,7 +29,7 @@ gem 'omniauth-facebook'
 gem 'friendly_id'
 gem 'bootstrap-select-rails'
 gem 'jquery-rails'
-
+gem 'arctic_admin'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

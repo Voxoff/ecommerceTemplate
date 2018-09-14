@@ -11,40 +11,27 @@
       <h1><%= @product.name %></h1>
       <p>Some awesome description of our amazing product.</p>
       <p>Amount: £<span id="price"><%= humanized_money(@product.price) %></span></p>
-      <% if false %>
-      <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'product_id', @product.id %>
-        <%= collection_select :product, :id, [@product], :tring, 1..10 %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-      <% end %>
-      <label for="quantity">Quantity: </label> 
-      <select id="quantity" name="quantity">
-        <% for i in (1..10) %>
-          <option value="<%= i %>"> <%= i %></option>
-        <% end %>
-      </select>
-
-      <% else %>
-        <%= simple_form_for orders_path, {wrapper: :vertical_collection } do |f| %>
-          <%= f.input "Quantity", required: false, collection: 1..9, as: :select, input_html: {id: "dropdown", class: "selectpicker"}, selected: 1 %>
-          <%= f.submit "Purchase", class: "btn btn-primary" %>
-        <% end %>
+      <%= simple_form_for(@order, {wrapper: :vertical_collection}) do |f| %>
+        <%= f.input "Quantity", required: false, collection: 1..9, as: :select, input_html: {id: "dropdown", class: "selectpicker"}, selected: 1 %>
+        <!-- Seems cleaner to pass this outside of order hash? -->
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.submit "Purchase", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
 <%= content_for :after_js do %>
-  <%= javascript_tag "$('.selectpicker').selectpicker();" %>
+  <%#= javascript_tag "$('.selectpicker').selectpicker();" %>
 <% end %>
 
 <script type="text/javascript">
   //This is not th emost efficient method
-  document.addEventListener("click", (e)=> {
-    if (e.target.tagName == "A"){
-      let q = e.target.children[0].innerHTML
-      q = parseInt(q)
-      let amount = document.getElementById('price').innerHTML
-      document.getElementById('price').innerHTML = q * <%= humanized_money(@product.price) %>
-    }
-  })
+  // document.addEventListener("click", (e)=> {
+  //   if (e.target.tagName == "A"){
+  //     let q = e.target.children[0].innerHTML
+  //     q = parseInt(q)
+  //     let amount = document.getElementById('price').innerHTML
+  //     document.getElementById('price').innerHTML = q * <%= humanized_money(@product.price) %>
+  //   }
+  // })
 </script>

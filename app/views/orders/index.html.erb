@@ -1,5 +1,11 @@
-<% @orders.each do |order| %>
-  <div class="card"> 
-    <p>order.product_sku</p>
-  </div>
-<% end %>
+<div class="container">
+  <% @orders.in_groups_of(3) do |orders| %>
+    <% orders.each do |order| %>
+      <div class="row">
+        <div class="card"> 
+          <p>order.product_sku</p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

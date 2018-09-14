@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    product = Product.find(params[:product_id])
+    product = Product.find(params["order"][:product_id])
     order  = Order.create!(product_sku: product.sku, amount: product.price, state: 'PENDING', user: current_user)
 
     redirect_to new_order_payment_path(order)

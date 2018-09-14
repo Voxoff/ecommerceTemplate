@@ -33,21 +33,21 @@
 
 <!-- Products -->
 <div class="container">
-<% @products.each do |product| %>
-
+<% @products.in_groups_of(3) do |product| %>
   <div class="row">
-    <div class="product-card">
-      <h1><%= product.name %></h1>
-      <%= cl_image_tag product.photo %>
-    </div>
+    <% product.each do |product| %>
+      <div class="col-md-4">
+        <div class="product-card">
+          <h1><%= product.name %></h1>
+          <%= cl_image_tag product.photo, height: 300 %>
+        </div>
+      </div>
+    <% end %>
   </div>
 <% end %>
 </div>
 
-
-
 <div class="home-page">
-
   <section class="home-page_first-section">
     <h3>FIRST SECTION</h3>
     <% @products.each do |product| %>
