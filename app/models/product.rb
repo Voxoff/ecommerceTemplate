@@ -4,4 +4,7 @@ class Product < ApplicationRecord
   validates :name, presence: true
   mount_uploader :photo, PhotoUploader
   # validates :price, presence: true
+
+  extend FriendlyId
+  friendly_id :name
 end

@@ -31,6 +31,20 @@
   </div>
 </div>
 
+<!-- Products -->
+<div class="container">
+<% @products.each do |product| %>
+
+  <div class="row">
+    <div class="product-card">
+      <h1><%= product.name %></h1>
+      <%= cl_image_tag product.photo %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+
 
 <div class="home-page">
 
