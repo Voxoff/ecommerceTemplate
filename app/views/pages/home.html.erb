@@ -30,6 +30,7 @@
     </div>
   </div>
 </div>
+
 <!-- Products -->
 <div class="container">
 <% @products.each do |product| %>
@@ -44,20 +45,24 @@
 </div>
 
 
+
 <div class="home-page">
-<ol>
+
   <section class="home-page_first-section">
-  <li>Stripe</li>
     <h3>FIRST SECTION</h3>
-  <li>Devise</li>
+    <% @products.each do |product| %>
+        <h3><%= product.name  %></h3>
+        <%= product.description %>
+        <%= product.price_cents %>
+    <% end %>
   </section>
-  <li>MoneyRails</li>
+
   <section class="home-page_second-section">
-  <li>Admin backend</li>
     <h3>SECOND SECTION</h3>
-</ol>
   </section>
+
   <section class="home-page_third-section">
     <h3>THIRD SECTION</h3>
   </section>
+
 </div> 
