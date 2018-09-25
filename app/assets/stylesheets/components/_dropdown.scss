@@ -22,3 +22,13 @@
   }
 }
 
+.tri  {
+  width: 0; 
+  height: 0; 
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid black;
+  position:absolute;
+  bottom: 73px;
+  left:75px;
+}
