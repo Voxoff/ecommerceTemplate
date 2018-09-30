@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'pages/contact'
   get 'pages/about'
+  get 'pages/education'
+  get 'pages/privacy_policy'
   root to: 'pages#home'
   resources :products, only: [:show, :index]
   resources :orders, only: [:show, :create, :index] do

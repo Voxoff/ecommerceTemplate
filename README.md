@@ -1,3 +1,7 @@
+Todo:
+
+
+
 # An ecommerce template
 
 Gems

@@ -1,9 +1,41 @@
+
+
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,170,0.6) 0%, rgba(0,35,60,0.6) 50%), url(<%= image_url('lillies.jpg') %>);">
   <div class="banner-content">
     <h1>Ecommerce Template</h1>
       <a class="navigation_link" href="/">
         Home
       </a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Modalid" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for(:user, :url => session_path(:user)) do |f| %>
+          <div class="email-container">
+            <%= f.text_field :email, :class =>"form-control",placeholder: "Email", value:"" %>
+          </div>
+          <div class="password-container">
+            <%= f.password_field :password, :label =>"Password", :class =>"form-control", placeholder:"Password", value:"" %>
+          </div>
+          <%= f.submit 'Login', :class =>"form-control" %>
+          <%= f.check_box :remember_me, label: "Remember me", value: "true" %>
+          <%= f.label :remember_me %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -33,20 +65,27 @@
 
 <!-- Products -->
 <div class="container">
-<% @products.in_groups_of(3) do |product| %>
-  <div class="row">
-    <% product.each do |product| %>
-      <div class="col-md-4">
-        <div class="product-card">
-          <h1><%= product.name %></h1>
-          <%= cl_image_tag product.photo, height: 300 %>
+  <% @products.in_groups_of(3) do |product| %>
+    <div class="row">
+      <% product.each do |product| %>
+        <div class="col-lg-4">
+          <div class="product-card">
+            <%= cl_image_tag product.photo,crop: :fit, class: "image"%>
+            <div class="bar">
+              <div class="top-row">
+                <h4><%= product.name %></h4>
+                <h4><%= product.price %></h4>
+              </div>
+              <%= product.review_average || "Be the first to review this!" %>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
+<% if false %>
 <div class="home-page">
   <section class="home-page_first-section">
     <h3>FIRST SECTION</h3>
@@ -64,5 +103,5 @@
   <section class="home-page_third-section">
     <h3>THIRD SECTION</h3>
   </section>
-
+<% end %>
 </div> 

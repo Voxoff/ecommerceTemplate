@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', products_path %>  
+<%#= link_to 'Back', products_path %>  
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-6">
@@ -12,7 +12,6 @@
       <p>Some awesome description of our amazing product.</p>
       <p>Amount: £<span id="price"><%= humanized_money(@product.price) %></span></p>
       <%= simple_form_for(@order, {wrapper: :vertical_collection}) do |f| %>
-
         <%= f.input "Quantity", required: false, collection: 1..9, as: :select, input_html: {id: "dropdown"}, selected: 1 %>
         <span class="tri"></span>
         <%= f.hidden_field :product_id, value: @product.id %>
@@ -22,7 +21,6 @@
   </div>
 </div>
 <%= content_for :after_js do %>
-  <%#= javascript_tag "$('.selectpicker').selectpicker();" %>
 <% end %>
 
 <script type="text/javascript">

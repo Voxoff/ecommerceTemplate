@@ -6,7 +6,10 @@
   <div class="navbar-hd-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-      <%= link_to "Products", products_path, class: "navbar-hd-item navbar-hd-link" %>
+      <%= link_to "Shop", products_path, class: "navbar-hd-item navbar-hd-link" %>
+      <%= link_to "Contact", pages_contact_path, class: "navbar-hd-item navbar-hd-link" %>
+      <%= link_to "Education", pages_education_path, class: "navbar-hd-item navbar-hd-link" %>    
+      <%= link_to "About", pages_about_path, class: "navbar-hd-item navbar-hd-link" %>
       <%= link_to orders_path, class: "navbar-hd-item navbar-hd-link" do %> 
         <i class="fas fa-shopping-cart"></i>
       <% end %>
@@ -38,8 +41,9 @@ https://picsum.photos/30/30/?random" %>
         </div>
       </div>
     <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-hd-item navbar-hd-link" %>
+      <!-- Login link for non-modal(when logged out) -->
+      <%#= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-hd-item navbar-hd-link" %>
+      <%= button_tag("sign_in", class: "btn btn-primary", data: {toggle: "modal", target: "#Modalid"}) %>
     <% end %>
   </div>
 
@@ -53,4 +57,3 @@ https://picsum.photos/30/30/?random" %>
     </div>
   </div>
 </div>
-
