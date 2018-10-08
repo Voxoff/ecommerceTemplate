@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
+  self.table_name = "products"
   monetize :price_cents
   has_many :reviews
-  validates :name, presence: true
+  validates :name, :price, presence: true
   mount_uploader :photo, PhotoUploader
   # validates :price, presence: true
 
