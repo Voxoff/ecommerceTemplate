@@ -8,7 +8,7 @@
       </a>
   </div>
 </div>
-
+<% if false %>
 <!-- Modal -->
 <div class="modal fade" id="Modalid" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -19,9 +19,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= form_for(:user, :url => session_path(:user)) do |f| %>
+        <%= simple_form_for(@user, :url => session_path(:user)) do |f| %>
           <div class="email-container">
-            <%= f.text_field :email, :class =>"form-control",placeholder: "Email", value:"" %>
+            <%= f.text_field :email, :class =>"form-control",placeholder: "Email", value:"", error: "Please Try again", validate: { presence: true, uniqueness: false }%>
           </div>
           <div class="password-container">
             <%= f.password_field :password, :label =>"Password", :class =>"form-control", placeholder:"Password", value:"" %>
@@ -38,7 +38,33 @@
     </div>
   </div>
 </div>
+<%= content_for :after_js do %>
+  <script type="text/javascript">
+    $(document).on('shown.bs.modal', '.modal', function() {
+    $('form[data-client-side-validations]').enableClientSideValidations();
+  });
+  console.log("in afterjs")
+</script>
 
+
+<% end %>
+<!-- first lets get none modal validations working -->
+<%= simple_form_for(@user, :url => session_path(:user)) do |f| %>
+  <div class="email-container">
+    <%= f.text_field :email, :class =>"form-control",placeholder: "Email", value:"", error: "Please Try again", validate: { presence: true, uniqueness: false }%>
+  </div>
+  <div class="password-container">
+    <%= f.password_field :password, :label =>"Password", :class =>"form-control", placeholder:"Password", value:"" %>
+  </div>
+  <%= f.submit 'Login', :class =>"form-control" %>
+  <%= f.check_box :remember_me, label: "Remember me", value: "true" %>
+  <%= f.label :remember_me %>
+<% end %>
+
+
+
+
+<% end %>
 <div class="flex">
   <div class="card">
     <%= image_tag "loupe.svg" %>
@@ -70,14 +96,16 @@
       <% product.each do |product| %>
         <div class="col-lg-4">
           <div class="product-card">
-            <%= cl_image_tag product.photo,crop: :fit, class: "image"%>
-            <div class="bar">
-              <div class="top-row">
-                <h4><%= product.name %></h4>
-                <h4>£<%= product.price %></h4>
+            <%= link_to product_path(product) do %>
+              <%= cl_image_tag product.photo,crop: :fit, class: "image"%>
+              <div class="bar">
+                <div class="top-row">
+                  <h4><%= product.name %></h4>
+                  <h4>£<%= product.price %></h4>
+                </div>
+                <%= product.review_average || "Be the first to review this!" %>
               </div>
-              <%= product.review_average || "Be the first to review this!" %>
-            </div>
+            <% end %>
           </div>
         </div>
       <% end %>

@@ -10,12 +10,29 @@
     <div class="col-sm-12 col-md-6">
       <h1><%= @product.name %></h1>
       <p>Some awesome description of our amazing product.</p>
-      <p>Amount: £<span id="price"><%= humanized_money(@product.price) %></span></p>
+      <div class="product-info">
+        <span><p>Amount: </p></span>
+        <p><span id="price">£<%= humanized_money(@product.price) %></span></p>
+      </div>
+      <div class="product-info">
+        <span><p>Quantity</p></span>
+        <%= simple_form_for(@order, {wrapper: :vertical_col}) do |f| %>
+          <%= f.input :number, collection: 1..9, selected: 1, label: false, class: "form-dropdown"%>
+          <%= f.hidden_field :product_id, value: @product.id %>
+        <%# end %>
+      </div>
+      <div class="product-info">
+        <span><p>Strength</p></span>
+        <%#= simple_form_for(@order, {wrapper: :vertical_col}) do |f| %>
+          <%= f.input :strength, collection: 1..5, selected: 1, label: false%>
+        <% end %>
+      </div>
+      <% if false %>
       <%= simple_form_for(@order, {wrapper: :vertical_collection}) do |f| %>
         <%= f.input "Quantity", required: false, collection: 1..9, as: :select, input_html: {id: "dropdown"}, selected: 1 %>
-        <span class="tri"></span>
         <%= f.hidden_field :product_id, value: @product.id %>
         <%= f.submit "Purchase", class: "btn btn-primary" %>
+      <% end %>
       <% end %>
     </div>
   </div>

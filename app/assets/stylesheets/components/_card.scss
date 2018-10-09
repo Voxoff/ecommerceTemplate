@@ -3,8 +3,11 @@
   position: relative;
   background-color: white;
   padding: 5px;
+  text-decoration: none;
+
   margin-bottom: 40px;
   &h4{
+
     position: absolute;
   }
   &:hover{
@@ -25,9 +28,15 @@
   .top-row{
     display: flex;
     justify-content: space-between;
+    h4:hover{
+      text-decoration: none;
+    }
   }
 }
 
 
-
+h4:hover{
+  text-decoration: none;
+  text-decoration-color: black;
+}
 

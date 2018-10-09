@@ -30,6 +30,8 @@ gem 'friendly_id'
 gem 'bootstrap-select-rails'
 gem 'jquery-rails'
 gem 'arctic_admin'
+# gem 'client_side_validations'
+# gem 'client_side_validations-simple_form'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -180,14 +180,66 @@ SimpleForm.setup do |config|
   # config.input_field_valid_class = 'is-valid'
   # config.input_field_error_class = 'is-invalid'
   
-  config.wrappers :vertical_collection, item_wrapper_class: 'form-check', tag: 'fieldset', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+  config.wrappers :vertical_col, item_wrapper_class: 'form-check', tag: 'fieldset', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
     b.use :html5
-    b.optional :readonly
-    b.wrapper :legend_tag, tag: 'legend', class: 'col-form-label pt-0' do |ba|
-      ba.use :label_text
-    end
     b.use :input, class: 'form-check-input', error_class: 'is-invalid', valid_class: 'is-valid'
     b.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback d-block' }
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
+
+  # to learn
+  # config.wrappers :vertical_collection, item_wrapper_class: 'form-check', tag: 'fieldset', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+  #   b.use :html5
+  #   b.optional :readonly
+  #   # b.wrapper :legend_tag, tag: 'legend', class: 'col-form-label pt-0' do |ba|
+  #   #   ba.use :label_text
+  #   # end
+  #   b.use :input, class: 'form-check-input', error_class: 'is-invalid', valid_class: 'is-valid'
+  #   b.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback d-block' }
+  #   b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
+  # end
+
+  # config.wrappers :inline_checkbox, :tag => 'div', :class => 'control-group', :error_class => 'error' do |b|
+  #   b.use :html5
+  #   b.wrapper :tag => 'div', :class => 'controls' do |ba|
+  #     ba.use :label_input, :wrap_with => { :class => 'checkbox inline' }
+  #     ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
+  #     ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
+  #   end
+  # end
+
+  # config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
+  #   b.use :html5
+  #   b.use :placeholder
+  #   b.optional :maxlength
+  #   b.optional :pattern
+  #   b.optional :min_max
+  #   b.optional :readonly
+  #   b.use :label, class: 'db fw6 lh-copy f6'
+
+  #   b.use :input, class: 'pa2 input-reset ba bg-transparent w-100 measure'
+  #   b.use :error, wrap_with: { tag: 'div', class: "help_block" }
+  #   b.use :hint,  wrap_with: { tag: 'div', class: "help_block" }
+  # end
+
+  # config.wrappers :inline,
+  #   class: :input,
+  #   hint_class: 'field--with-hint', error_class: 'field--with-errors' do |b|
+
+  #   # mix in special behavior using `use :component`
+  #   b.use :html5
+  #   b.use :placeholder
+
+  #   # define custom HTML output using `wrapper`
+  #   # b.wrapper tag: :div, class: 'column-3' do |c|
+  #   #   c.use :label, class: 'field__label'
+  #   # end
+  #   b.wrapper tag: :div, class: 'column-3' do |c|
+  #     c.use :input
+  #     c.wrapper tag: :div, class: 'field__meta', unless_blank: true do |d|
+  #       d.use :hint,  wrap_with: { tag: :div, class: 'field__hint' }
+  #       d.use :error, wrap_with: { tag: :div, class: 'field__error' }
+  #     end
+  #   end
+  # end
 end

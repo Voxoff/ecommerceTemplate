@@ -42,8 +42,8 @@ https://picsum.photos/30/30/?random" %>
       </div>
     <% else %>
       <!-- Login link for non-modal(when logged out) -->
-      <%#= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-hd-item navbar-hd-link" %>
-      <%= button_tag("sign_in", class: "btn btn-primary", data: {toggle: "modal", target: "#Modalid"}) %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-hd-item navbar-hd-link" %>
+      <%#= button_tag("Sign in", class: "btn btn-primary", data: {toggle: "modal", target: "#Modalid"}) %>
     <% end %>
   </div>
 

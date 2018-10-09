@@ -1,34 +1,60 @@
-.form-check-input{
-  width: 80px !important;
+.form-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-#dropdown{
-    background: rgba(0,0,0,0.15);
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 250px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    outline: none; 
-    background-image: linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,0,0,0.25));
-    background-size: 80% 100%;
-    background-position: top right;
-    background-repeat: no-repeat;
-
-  &:hover {
-      background-image: linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,0,0,0.32));
-  }
+.form-group select {
+  background-color: #1abc9c;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em; 
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
 }
 
-.tri  {
-  width: 0; 
-  height: 0; 
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid black;
-  position:absolute;
-  bottom: 73px;
-  left:75px;
+.form-group::before,
+.form-group::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.form-group::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.form-group::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.form-group select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.form-group select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.form-group::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.form-group::after {
+  color: rgba(0,0,0,.4);
 }
