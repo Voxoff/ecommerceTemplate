@@ -16,6 +16,8 @@
   text-indent: 0.01px;
   text-overflow: '';
   -webkit-appearance: button; /* hide default arrow in chrome OSX */
+  -moz-appearance: none;
+   appearance: none;
 }
 
 .form-group::before,

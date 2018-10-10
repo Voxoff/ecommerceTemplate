@@ -14,3 +14,10 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+@font-face {
+  font-family: 'palatino';
+  src:font-url('palatino/palatino.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+$palatino: "palation";

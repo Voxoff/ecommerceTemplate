@@ -1,0 +1,14 @@
+.green-header{
+  width: 100%;
+  height: 100px;
+  background-color: $primary-color-light;
+  position: relative;
+  margin-bottom: 100px;
+  h2{
+    position: absolute;
+    bottom: -45px;
+    left: 100px;
+    font-family: 'palatino';
+    color: $secondary-color-light;
+  }
+}

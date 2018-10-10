@@ -93,7 +93,7 @@
 <div class="container">
   <% @products.in_groups_of(3) do |product| %>
     <div class="row">
-      <% product.each do |product| %>
+      <% product.compact.each do |product| %>
         <div class="col-lg-4">
           <div class="product-card">
             <%= link_to product_path(product) do %>
