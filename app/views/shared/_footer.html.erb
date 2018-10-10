@@ -1,26 +1,24 @@
 <div class="footer">
-	<div class="footer-company-details">
-		<p>T: 07814164315</p>
-		<p>E: guy@lewagon.com</p>
-		<p>A: 138 Kingsland Road, London UK 3B2 4H2</p>
-	</div>
   <div class="content">
-    <div class="footer-links">
+    <div class="graphics">
       <a href="#"><i class="fa fa-github fa-2x"></i></a>
       <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
       <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
       <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-      <!-- <a href="#"><i class="fa fa-linkedin fa-3x"></i></a> -->
-      <!-- See product show for FontAwesome update -->
     </div>
-    <div class="f-line-cont">
+    <div class="f-line">
       <div class="footer-line"></div>
     </div>
+    <div class="formal">
+      <ul class="links">
+        <li><%= link_to "Privacy Policy", pages_privacy_policy_path, class: "navbar-hd-item navbar-hd-link" %></li>        
+        <li><p> | </p></li>
+        <li><%= link_to "Terms and Conditions", pages_privacy_policy_path, class: "navbar-hd-item navbar-hd-link" %></li>
+      </ul>
+      <div class="copyright">
+        <p>Flow CBD All Rights Reserved <i class="fa fa-copyright"></i></p> <!-- far for FontA 5-->
+      </div>
+    </div>
   </div>
-	<div class="footer-legal">
-		<p>Flow CBD All Right Reserved <i class="fa fa-copyright"></i></p> <!-- far -->
-		<%= link_to "Privacy Policy", pages_privacy_policy_path %>
-		<%= link_to "Terms and Conditions", pages_privacy_policy_path %>
-	</div>
 </div>
 

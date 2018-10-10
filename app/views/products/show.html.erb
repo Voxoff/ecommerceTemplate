@@ -6,8 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-6">
-      <%= cl_image_tag(@product.photo_url,
-      width: 500, height: 500, crop: :fill) %>
+      <%= cl_image_tag(@product.photo_url, class: "image-responsive") %>
     </div>
     <div class="col-sm-12 col-md-6">
       <h1><%= @product.name %></h1>

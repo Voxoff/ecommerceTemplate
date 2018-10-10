@@ -1,38 +1,16 @@
 .footer {
-	height: 20vh;
+	// height: 20vh;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 0 1.5rem;
   margin-top: 250px;
 	background: $primary-color-dark;
-
-	&-company-details {
-		display: flex;
-		flex-direction: column;
-    color: $secondary-color-light;
-	}
-
-	&-legal {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end; 
-    text-decoration: none;
-    color: $secondary-color-light;
-    a {
-        text-decoration: none;
-        color: $secondary-color-light;
-        &:hover{
-          text-decoration: none;
-          color: white;
-          }
-      }
-	}
-
-  &-links {
+  
+  .graphics {
     display: flex;
     align-items: center;
-    margin-top: -20px;
+    margin-top: 15px;
     a {
       color: white;
       opacity: 0.6;
@@ -46,12 +24,33 @@
   }
 }
 
+  .links{
+    display: flex;
+    color: $secondary-color-light;
+    list-style: none;
+    justify-content: space-around;
+    padding-left: 0;
+    a{
+      text-decoration: none;
+      color: $secondary-color-light;
+      &:hover{
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+.copyright {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
 .footer-line {
   width: 280px;
   height: 2px;
   background-color: white;
 }
-.f-line-cont {
+.f-line {
   margin-top: 20px;
   display: flex;
   justify-content: center;

@@ -1,11 +1,11 @@
-.form-group {
+.product-form-group {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
 
-.form-group select {
-  background-color: #1abc9c;
+.product-form-group select {
+  background-color: $primary-color-light;
   color: #fff;
   font-size: inherit;
   padding: .5em;
@@ -20,14 +20,14 @@
    appearance: none;
 }
 
-.form-group::before,
-.form-group::after {
+.product-form-group::before,
+.product-form-group::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.form-group::after { /*  Custom dropdown arrow */
+.product-form-group::after { /*  Custom dropdown arrow */
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -37,7 +37,7 @@
   margin-top: -.5em;
 }
 
-.form-group::before { /*  Custom dropdown arrow cover */
+.product-form-group::before { /*  Custom dropdown arrow cover */
   width: 2em;
   right: 0;
   top: 0;
@@ -45,18 +45,18 @@
   border-radius: 0 3px 3px 0;
 }
 
-.form-group select[disabled] {
+.product-form-group select[disabled] {
   color: rgba(0,0,0,.3);
 }
 
-.form-group select[disabled]::after {
+.product-form-group select[disabled]::after {
   color: rgba(0,0,0,.1);
 }
 
-.form-group::before {
+.product-form-group::before {
   background-color: rgba(0,0,0,.15);
 }
 
-.form-group::after {
+.product-form-group::after {
   color: rgba(0,0,0,.4);
 }
