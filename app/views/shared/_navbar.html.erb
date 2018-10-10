@@ -1,49 +1,49 @@
 <div class="navbar-hd">
   <%= link_to root_path, class: "navbar-hdn-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
   <div class="navbar-hd-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-      <%= link_to "Shop", products_path, class: "navbar-hd-item navbar-hd-link" %>
-      <%= link_to "Contact", pages_contact_path, class: "navbar-hd-item navbar-hd-link" %>
-      <%= link_to "Education", pages_education_path, class: "navbar-hd-item navbar-hd-link" %>    
-      <%= link_to "About", pages_about_path, class: "navbar-hd-item navbar-hd-link" %>
-      <%= link_to orders_path, class: "navbar-hd-item navbar-hd-link" do %> 
-        <i class="fas fa-shopping-cart"></i>
-      <% end %>
+    <%= link_to "Shop", products_path, class: "navbar-hd-item navbar-hd-link" %>
+    <%= link_to "Contact", pages_contact_path, class: "navbar-hd-item navbar-hd-link" %>
+    <%= link_to "Education", pages_education_path, class: "navbar-hd-item navbar-hd-link" %>    
+    <%= link_to "About", pages_about_path, class: "navbar-hd-item navbar-hd-link" %>
+    <%= link_to orders_path, class: "navbar-hd-item navbar-hd-link" do %>
+    <i class="fa fa-shopping-cart fa-lg"></i>
+    <!-- This is old (version four). If you want to upgrade, put 'fas' and use the cdn. Gem not out yet -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
+    <% end %>
 
-      <div class="navbar-hd-item">
-        <div class="dropdown">
-          <% avatar_url = current_user.facebook_picture_url || "
+    <div class="navbar-hd-item">
+      <div class="dropdown">
+        <% avatar_url = current_user.facebook_picture_url || "https://picsum.photos/30/30/?random" %>
+        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-hd-menu", "data-toggle" => "dropdown" %>
 
-https://picsum.photos/30/30/?random" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-hd-menu", "data-toggle" => "dropdown" %>
-
-          <ul class="dropdown-menu dropdown-menu-right navbar-hd-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+        <ul class="dropdown-menu dropdown-menu-right navbar-hd-dropdown-menu">
+          <li>
+            <%= link_to "#" do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
     <% else %>
-      <!-- Login link for non-modal(when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-hd-item navbar-hd-link" %>
-      <%#= button_tag("Sign in", class: "btn btn-primary", data: {toggle: "modal", target: "#Modalid"}) %>
+    <!-- Login link for non-modal(when logged out) -->
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-hd-item navbar-hd-link" %>
+    <%#= button_tag("Sign in", class: "btn btn-primary", data: {toggle: "modal", target: "#Modalid"}) %>
     <% end %>
   </div>
 

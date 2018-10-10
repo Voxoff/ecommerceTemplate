@@ -33,10 +33,10 @@
 .navbar-hd-link {
   color: #616668;
   font-size: 14px;
-}
-.navbar-hd-link:hover {
-  color: #da552f;
-  text-decoration: none;
+  &:hover {
+    color: $primary-color-light;
+    text-decoration: none;
+  }
 }
 
 .navbar-hd-dropdown-menu {

@@ -1,6 +1,6 @@
 
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,170,0.6) 0%, rgba(0,35,60,0.6) 50%), url(<%= image_url('lillies.jpg') %>);">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,170,0.6) 0%, rgba(0,35,60,0.6) 50%), url(<%= image_url('home.jpg') %>);">
   <div class="banner-content">
     <h1>Ecommerce Template</h1>
       <a class="navigation_link" href="/">
@@ -63,33 +63,37 @@
 
 
 
-
 <% end %>
-<div class="flex">
+<div class="container">
+<div class="graphics">
   <div class="card">
-    <%= image_tag "loupe.svg" %>
+    <%= image_tag "legal.png", size: "120x120"%>
     <div class="how-it-works-text">
       <h3>Find it</h3>
-      <p>Quick and simple search</p>
+      <p>CBD is legal and has been since 2016</p>
     </div>
   </div>
   <div class="card">
-    <%= image_tag "001-chef.svg" %>
+    <%= image_tag "plaster.png", size: "120x120" %>
     <div class="how-it-works-text">
       <h3>Find it</h3>
-      <p>Quick and simple search</p>
+      <p>Widespread beneficial medicinal effects</p>
     </div>
   </div>
   <div class="card">
-    <%= image_tag "002-medical.svg" %>
+    <%= image_tag "002-medical.svg", size: "120x120" %>
     <div class="how-it-works-text">
       <h3>Find it</h3>
       <p>Quick and simple search</p>
     </div>
   </div>
 </div>
+</div>
 
+
+<i class="fab fa-github"></i>
 <!-- Products -->
+<h2 class="home-title">Our products</h2>
 <div class="container">
   <% @products.in_groups_of(3) do |product| %>
     <div class="row">
