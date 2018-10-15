@@ -1,10 +1,9 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  # skip_before_action :authenticate_user!
   def home
-    # @disable_nav = true
+    @cart = find_cart { create_cart }
     @products = Product.all
     @user = User.new
-    # for each prduct, get all the reviews, then average that. 
   end
 
   def about

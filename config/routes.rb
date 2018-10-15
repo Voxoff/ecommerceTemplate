@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'pages/privacy_policy'
   root to: 'pages#home'
   resources :products, only: [:show, :index]
-  resources :orders, only: [:show, :create, :index] do
+  resources :cart_items, only: [:show, :create, :index] do
+  end
+  resources :cart, only: [:show] do
     resources :payments, only: [:new, :create]
   end
   resources :reviews

@@ -66,21 +66,21 @@
 <% end %>
 <div class="container">
 <div class="graphics">
-  <div class="card">
+  <div class="card-graphics">
     <%= image_tag "legal.png", size: "120x120"%>
     <div class="how-it-works-text">
       <h3>Find it</h3>
       <p>CBD is legal and has been since 2016</p>
     </div>
   </div>
-  <div class="card">
+  <div class="card-graphics">
     <%= image_tag "plaster.png", size: "120x120" %>
     <div class="how-it-works-text">
       <h3>Find it</h3>
       <p>Widespread beneficial medicinal effects</p>
     </div>
   </div>
-  <div class="card">
+  <div class="card-graphics">
     <%= image_tag "002-medical.svg", size: "120x120" %>
     <div class="how-it-works-text">
       <h3>Find it</h3>
@@ -93,45 +93,24 @@
 <!-- Products -->
 <h2 class="home-title">Our products</h2>
 <div class="container">
-  <% @products.in_groups_of(3) do |product| %>
-    <div class="row">
-      <% product.compact.each do |product| %>
-        <div class="col-lg-4">
-          <div class="product-card">
-            <%= link_to product_path(product) do %>
-              <%= cl_image_tag product.photo,crop: :fit, class: "image"%>
-              <div class="bar">
-                <div class="top-row">
-                  <h4><%= product.name %></h4>
-                  <h4>£<%= product.price %></h4>
-                </div>
-                <%= product.review_average || "Be the first to review this!" %>
+  <%# @products.in_groups_of(3) do |product| %>
+  <div class="row">
+    <% @products.compact.each do |product| %>
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+          <%= link_to product_path(product) do %>
+            <%= cl_image_tag product.photo,crop: :fit, class: "image"%>
+            <div class="bar">
+              <div class="top-row">
+                <h4><%= product.name %></h4>
+                <h4>£<%= product.price %></h4>
               </div>
-            <% end %>
-          </div>
+              <%= product.review_average || "Be the first to review this!" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-<% if false %>
-<div class="home-page">
-  <section class="home-page_first-section">
-    <h3>FIRST SECTION</h3>
-    <% @products.each do |product| %>
-        <h3><%= product.name  %></h3>
-        <%= product.description %>
-        <%= product.price_cents %>
+      </div>
     <% end %>
-  </section>
-
-  <section class="home-page_second-section">
-    <h3>SECOND SECTION</h3>
-  </section>
-
-  <section class="home-page_third-section">
-    <h3>THIRD SECTION</h3>
-  </section>
-<% end %>
-</div> 
+  </div>
+  <%# end %>
+</div>

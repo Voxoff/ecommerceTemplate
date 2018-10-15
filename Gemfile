@@ -30,6 +30,7 @@ gem 'friendly_id'
 gem 'bootstrap-select-rails'
 gem 'jquery-rails'
 gem 'arctic_admin'
+# gem 'acts_as_shopping_cart' # just do this manually?
 # gem 'client_side_validations'
 # gem 'client_side_validations-simple_form'
 

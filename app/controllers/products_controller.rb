@@ -4,7 +4,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @order = Order.new
+    @cart_item = CartItem.new
     @product = Product.friendly.find(params[:id])
+  end
+
+  def create
+    raise
   end
 end

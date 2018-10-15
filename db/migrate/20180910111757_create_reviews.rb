@@ -15,6 +15,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :payment
       t.string :jsonb
       t.references :user, foreign_key: true
+      
 
       t.timestamps
     end

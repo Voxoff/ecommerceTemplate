@@ -3,8 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
   has_many :orders
+  has_one :cart
   validates_confirmation_of :password
-
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

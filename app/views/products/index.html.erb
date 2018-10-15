@@ -1,14 +1,15 @@
+<%= render "shared/header", text: "Our Products" %>
 <div class="container">
   <div class="row">
-    <h1>Products</h1>
     <% @products.each do |product| %>
       <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <%= link_to image_tag(product.photo_url), product_path(product) %>
-          <div class="caption">
-            <h3><%= link_to product.name, product_path(product) %></h3>
-            <p>$$$</p>
-            <p>Amount: <%= humanized_money_with_symbol(product.price) %></p>
+        <div class="product-card">
+          <div class="thumbnail">
+            <%= link_to image_tag(product.photo_url), product_path(product) %>
+            <div class="caption">
+              <h3><%= link_to product.name, product_path(product) %></h3>
+              <p>Amount: <%= humanized_money_with_symbol(product.price) %></p>
+            </div>
           </div>
         </div>
       </div>

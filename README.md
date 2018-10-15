@@ -1,5 +1,6 @@
 Todo:
 # Pagination
+# Pages: Home, Order show, payment, sign in, sign up, 
 
 
 # An ecommerce template
