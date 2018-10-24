@@ -16,12 +16,11 @@ class ApplicationController < ActionController::Base
 
   def find_cart
     if current_user
-      @cart = Cart.find_by(user_id: current_user.id)
+      @cart = Cart.find_by(user_id: current_user.id, active: true)
     else
       @cart = Cart.find(session[:cart_id])
     end
     @cart ||= yield if block_given?
-    # create_cart unless @cart
     @cart
   end
 

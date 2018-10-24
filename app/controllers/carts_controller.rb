@@ -3,3 +3,4 @@ class CartsController < ApplicationController
     @cart = find_cart { create_cart }
   end
 end
+
